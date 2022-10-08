@@ -3,9 +3,6 @@ import { useGlobalContext } from "./context";
 
 const Search = () => {
   const { query, setQuery, isError } = useGlobalContext();
-  /* plz subsribe to thapa technical channel 
-          https://www.youtube.com/thapatechnical
-         */
   return (
     <>
       <section className="search-section">

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "./context";
 
-const imgUrl = "https://via.placeholder.com/200/200";
+const imgUrl = "https://image.tmdb.org/t/p/original";
 
 const Movie = () => {
   const { movie, isLoading } = useGlobalContext();
@@ -16,11 +16,11 @@ const Movie = () => {
         <div className="grid grid-4-col">
           {movie
             ? movie.map((curMovieElem) => {
-                const { imdbID, Title, Poster } = curMovieElem;
-                const movieName = Title.substring(0, 15);
+                const { id, original_title, poster_path } = curMovieElem;
+                const movieName = original_title.substring(0, 15);
 
                 return (
-                  <NavLink to={`movie/${imdbID}`} key={imdbID}>
+                  <NavLink to={`movie/${id}`} key={id}>
                     <div className="card">
                       <div className="card-info">
                         <h2>
@@ -28,7 +28,7 @@ const Movie = () => {
                             ? `${movieName}...`
                             : movieName}
                         </h2>
-                        <img src={Poster === "N/A" ? imgUrl : Poster} alt="#" />
+                        <img src={imgUrl+poster_path} alt="#" />
                       </div>
                     </div>
                   </NavLink>
