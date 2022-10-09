@@ -18,7 +18,7 @@ const Search = () => {
             />
           </div>
         </form>
-        <div className="card-error">
+        <div className="text-error mt-3 text-xl">
           <p>{isError.show && isError.msg}</p>
         </div>
       </section>

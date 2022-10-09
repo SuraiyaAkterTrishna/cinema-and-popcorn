@@ -69,12 +69,6 @@ img {
   align-items: center;
 }
 
-.card-error p {
-  color: red;
-  margin-top: 1rem;
-  font-size: 1.8rem;
-}
-
 /* Single Movie css code  */
 
 .movie-section {
