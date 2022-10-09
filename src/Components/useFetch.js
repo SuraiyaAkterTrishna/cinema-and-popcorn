@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
 // setting the api link
-export const API_URL = `https://movie-task.vercel.app/api/popular?page=1`;
+export const API_URL = `https://movie-task.vercel.app/api/`;
+
+
 
 const useFetch = (apiParams) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState({ show: "false", msg: '' });
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
 
   const getMovie = async (url) => {
     setIsLoading(true);
@@ -14,11 +16,9 @@ const useFetch = (apiParams) => {
       const res = await fetch(url);
       const data = await res.json();
 
-      console.log(data.data.results);
-      if (data.data.page <= 1) {
+      if (data.data?.page <= 1) {
         setIsLoading(false);
         setMovie(data.data.results);
-        console.log(movie);
         setIsError({ show: "false", msg: "" });
       } else {
         setIsError({ show: "true", msg: data.Error });
@@ -30,8 +30,11 @@ const useFetch = (apiParams) => {
 
   // debouncing in react js
   useEffect(() => {
+    const S_PATH = `search?page=1${apiParams}`;
+    const P_PATH = `popular?page=1`;
+    const PATH = (apiParams === "&query=") ? P_PATH : S_PATH;
     let timeOut = setTimeout(() => {
-      getMovie(`${API_URL}&s=${apiParams}`);
+      getMovie(API_URL + PATH);
     }, 1000);
     console.log("set");
     return () => {

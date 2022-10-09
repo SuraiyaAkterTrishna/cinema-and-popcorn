@@ -15,9 +15,10 @@ const Movie = () => {
       <section className="movie-page">
         <div className="grid grid-4-col">
           {movie
-            ? movie.map((curMovieElem) => {
-                const { id, original_title, poster_path } = curMovieElem;
+            ? movie.map((data) => {
+                const { id, original_title, poster_path } = data;
                 const movieName = original_title.substring(0, 15);
+                const poster = (poster_path === null)? 'https://sd.keepcalms.com/i-w600/keep-calm-poster-not-found.jpg':  imgUrl+poster_path;
 
                 return (
                   <NavLink to={`movie/${id}`} key={id}>
@@ -28,7 +29,7 @@ const Movie = () => {
                             ? `${movieName}...`
                             : movieName}
                         </h2>
-                        <img src={imgUrl+poster_path} alt="#" />
+                        <img src={poster} alt="#" />
                       </div>
                     </div>
                   </NavLink>

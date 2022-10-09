@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <>
       <section className="search-section">
-        <h2>Search Your Favourite Movie</h2>
+        <h2>Search Your Favorite Movie</h2>
         <form action="#" onSubmit={(e) => e.preventDefault()}>
           <div>
             <input
