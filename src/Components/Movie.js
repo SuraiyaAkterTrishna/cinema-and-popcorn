@@ -17,7 +17,6 @@ const Movie = () => {
           {movie
             ? movie.map((data) => {
                 const { id, original_title, poster_path } = data;
-                const movieName = original_title.substring(0, 15);
                 const poster = (poster_path === null)? 'https://sd.keepcalms.com/i-w600/keep-calm-poster-not-found.jpg':  imgUrl+poster_path;
 
                 return (
@@ -25,9 +24,7 @@ const Movie = () => {
                     <div className="card">
                       <div className="card-info">
                         <h2>
-                          {movieName.length > 13
-                            ? `${movieName}...`
-                            : movieName}
+                          {original_title}
                         </h2>
                         <img src={poster} alt="#" />
                       </div>
