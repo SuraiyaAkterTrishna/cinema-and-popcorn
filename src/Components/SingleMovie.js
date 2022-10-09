@@ -14,44 +14,53 @@ const SingleMovie = () => {
 
   if (error) return "An error has occurred: " + error.message;
 
+  const {backdrop_path, original_title, genres, overview, release_date, production_companies, vote_average, vote_count, popularity, production_countries} = data.data;
+  console.log(data.data);
+
   return (
     <section className="movie-section">
       <div className="movie-card">
         <figure>
           <img
-            src={`https://image.tmdb.org/t/p/original${data.data.backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
             alt=""
           />
         </figure>
         <div className="card-content">
-          <p className="title">{data.data?.original_title}</p>
-          <ul className="genres">
-            {data.data?.genres.map((genre) => (
-              <li key={genre.name}>{genre.name}</li>
+          <p className="title">{original_title}</p>
+          <ul className="list">
+            {genres.map((genre) => (
+              <li key={genre.name} className='bg-red list-li'>{genre.name}</li>
             ))}
           </ul>
           <p className="card-text">
-            <span className="color">{data.data?.overview}</span>
+            <span className="color">{overview}</span>
           </p>
           <p className="card-text">
             Release Date:{" "}
-            <span className="color">{data.data?.release_date}</span>
+            <span className="color">{release_date}</span>
           </p>
+          <p className="card-text">Countries:</p>
+          <ul className="list">
+            {production_countries.map((country) => (
+              <li key={country.name} className='list-li' style={{backgroundColor: "green"}}>{country.name}</li>
+            ))}
+          </ul>
           <p className="card-text">Companies:</p>
-          <ul className="companies">
-            {data.data?.production_companies.map((company) => (
-              <li key={company.name}>{company.name}</li>
+          <ul className="list">
+            {production_companies.map((company) => (
+              <li key={company.name}  className='bg-red list-li'>{company.name}</li>
             ))}
           </ul>
           <p className="card-text">
             Ratting:{" "}
-            <span className="color">{data.data?.vote_average} / 10</span>
+            <span className="color">{vote_average} / 10</span>
           </p>
           <p className="card-text">
-            Vote: <span className="color">{data.data.vote_count}</span>
+            Vote: <span className="color">{vote_count}</span>
           </p>
           <p className="card-text">
-            Popularity: <span className="color">{data.data.popularity}</span>
+            Popularity: <span className="color">{popularity}</span>
           </p>
           <NavLink to="/" className="back-btn">
             Go Back
