@@ -14,7 +14,7 @@
 :root {
   --text-clr: #4a5c6c;
   --bg-clr: #f2f4fc;
-  --border-clr: rgb(156, 176, 193);
+  --border-clr: #9cb0c1;
 }
 
 html {
@@ -45,12 +45,6 @@ img {
   transition: all 0.3s linear;
 }
 
-/* resuable code  */
-.container {
-  max-width: 140rem;
-  margin: auto;
-  padding: 3rem;
-}
 
 .grid {
   /* width: 100%; */

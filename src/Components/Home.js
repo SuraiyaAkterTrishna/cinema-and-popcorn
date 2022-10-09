@@ -4,7 +4,7 @@ import Search from "./Search";
 const Home = () => {
     return (
         <>
-      <div className="container">
+      <div className="max-w-screen-2xl mx-auto p-7">
         <Search />
         <Movie />
       </div>
