@@ -14,7 +14,7 @@
 :root {
   --text-clr: #4a5c6c;
   --bg-clr: #f2f4fc;
-  --border-clr: #9cb0c1;
+  --border-clr: rgb(156, 176, 193);
 }
 
 html {
@@ -45,6 +45,12 @@ img {
   transition: all 0.3s linear;
 }
 
+/* resuable code  */
+.container {
+  max-width: 140rem;
+  margin: auto;
+  padding: 3rem;
+}
 
 .grid {
   /* width: 100%; */
@@ -67,6 +73,32 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* search css  */
+.search-section {
+  margin: auto;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+input {
+  width: 30rem;
+  border-radius: 100px;
+  border: none;
+  border: 1px solid var(--border-clr);
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  outline: none;
+  margin-top: 2rem;
+}
+
+.card-error p {
+  color: red;
+  margin-top: 1rem;
+  font-size: 1.8rem;
 }
 
 /* Single Movie css code  */
@@ -164,24 +196,16 @@ a:hover img {
   padding: 1.2rem 3.6rem;
 }
 
-.list{
+.genres{
   display: flex;
   list-style: none;
 }
-.list-li{
+.genres li{
   color: white;
+  background-color: darkcyan;
   padding: 5px;
   margin-right: 5px;
   border-radius: 5px;
-}
-.bg-red{
-  background-color: red;
-}
-/* .bg-green{
-  background-color: green;
-} */
-.bg-chocolate{
-  background-color: chocolate;
 }
 .color{
   color: #4a5c6c;

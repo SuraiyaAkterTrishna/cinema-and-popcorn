@@ -28,9 +28,9 @@ const SingleMovie = () => {
         </figure>
         <div className="card-content">
           <p className="title">{original_title}</p>
-          <ul className="list">
+          <ul className="genres">
             {genres.map((genre) => (
-              <li key={genre.name} className='bg-red list-li'>{genre.name}</li>
+              <li key={genre.name}>{genre.name}</li>
             ))}
           </ul>
           <p className="card-text">
@@ -41,15 +41,15 @@ const SingleMovie = () => {
             <span className="color">{release_date}</span>
           </p>
           <p className="card-text">Countries:</p>
-          <ul className="list">
+          <ul className="genres">
             {production_countries.map((country) => (
-              <li key={country.name} className='list-li' style={{backgroundColor: "green"}}>{country.name}</li>
+              <li key={country.name}>{country.name}</li>
             ))}
           </ul>
           <p className="card-text">Companies:</p>
-          <ul className="list">
+          <ul className="genres">
             {production_companies.map((company) => (
-              <li key={company.name}  className='bg-red list-li'>{company.name}</li>
+              <li key={company.name}>{company.name}</li>
             ))}
           </ul>
           <p className="card-text">
