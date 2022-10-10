@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500&family=Lora:wght@400;500&family=Poppins:wght@400;600&display=swap");
 
-/* plz subsribe to thapa technical channel 
-          https://www.youtube.com/thapatechnical
-         */
-
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +33,6 @@ a {
 }
 
 img {
-  /* width: 25rem; */
   min-width: 10rem;
   max-height: 30rem;
   margin: 1rem 0;
@@ -53,7 +48,6 @@ img {
 }
 
 .grid {
-  /* width: 100%; */
   display: grid;
   gap: 3rem;
 }
@@ -66,8 +60,6 @@ img {
   width: 25rem;
   max-width: 30rem;
   min-height: 30rem;
-  /* background-color: #fafaff; */
-  /* padding: 2rem; */
   border-radius: 1rem;
 
   display: flex;
@@ -101,8 +93,12 @@ input {
   font-size: 1.8rem;
 }
 
-/* Single Movie css code  */
+.movie-page{
+  display: flex;
+  flex-wrap: wrap;
+}
 
+/* Single Movie css code  */
 .movie-section {
   width: 100%;
   height: 100vh;
@@ -209,6 +205,86 @@ a:hover img {
 }
 .color{
   color: #4a5c6c;
+}
+
+/* Filter Section */
+.filter {
+  position: relative;
+  z-index: 200;
+  margin-left: 75%;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+.dropdown:checked + label,
+.dropdown:not(:checked) + label{
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 2;
+  height: 50px;
+  transition: all 200ms linear;
+  border-radius: 4px;
+  width: 110px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  background-color: #ffeba7;
+  cursor: pointer;
+  color: #102770;
+  box-shadow: 0 12px 35px 0 rgba(255,235,167,.15);
+}
+.section-dropdown {
+  position: absolute;
+  background-color: #111;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 14px 35px 0 rgba(9,9,12,0.4);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 200ms linear;
+}
+.dropdown:checked ~ .section-dropdown{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.link {
+  position: relative;
+  color: #fff;
+  transition: all 200ms linear;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 5px 0;
+  padding-left: 20px;
+  padding-right: 15px;
+  margin: 2px 0;
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.link:hover {
+  color: #102770;
+  background-color: #ffeba7;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* responsive code   */
